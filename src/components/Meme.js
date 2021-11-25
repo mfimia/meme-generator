@@ -3,12 +3,24 @@ import { useState } from "react";
 
 export default function Meme() {
   let randomNumber = Math.floor(Math.random() * memes.length);
-  const [meme, setMeme] = useState(memes[randomNumber]);
+
+  // State variables
+  //   const [meme, setMeme] = useState(memes[randomNumber]);
+  const [allMemesData, setAllMemesData] = useState(memes);
+  const [meme, setMeme] = useState({
+    topText: "",
+    bottomText: "",
+    randomImage: allMemesData[randomNumber].url,
+  });
 
   const getMemeImage = (event) => {
     event.preventDefault();
-    randomNumber = Math.floor(Math.random() * memes.length);
-    setMeme(memes[randomNumber]);
+    setMeme((prev) => {
+      return {
+        ...prev,
+        randomImage: allMemesData[randomNumber].url,
+      };
+    });
   };
 
   return (
@@ -26,7 +38,7 @@ export default function Meme() {
           Get a new meme image 👀
         </button>
       </form>
-      <img src={meme.url} className="meme--img" alt="Random meme" />
+      <img src={meme.randomImage} className="meme--img" alt="Random meme" />
     </main>
   );
 }
