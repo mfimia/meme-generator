@@ -1,10 +1,10 @@
 import memes from "../memesData";
 import { useState } from "react";
 
-console.log(memes);
 export default function Meme() {
   let randomNumber = Math.floor(Math.random() * memes.length);
   const [meme, setMeme] = useState(memes[randomNumber]);
+
   const getMemeImage = (event) => {
     event.preventDefault();
     randomNumber = Math.floor(Math.random() * memes.length);
