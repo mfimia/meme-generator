@@ -42,12 +42,19 @@
   width: 40px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 420px;
+}
+
 .meme--form {
   width: 90%;
   margin: 6% auto;
   display: flex;
   flex-direction: column;
-  height: 16%;
+  height: 23%;
   justify-content: space-between;
 }
 
@@ -83,4 +90,11 @@
   border: none;
   cursor: pointer;
   background-color: rgb(139, 235, 235);
+}
+
+.meme--img {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  height: 268px;
 }
