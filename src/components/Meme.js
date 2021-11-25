@@ -1,13 +1,10 @@
 import memes from "../memesData";
-console.log(memes);
 
 export default function Meme() {
-  const handleClick = (event) => {
+  const getMemeImage = (event) => {
     event.preventDefault();
-    const randomNumber = Math.floor(Math.random() * 100);
-    const chosenMeme = memes.filter((meme, index) => {
-      return index === randomNumber;
-    });
+    const randomNumber = Math.floor(Math.random() * memes.length);
+    const chosenMeme = memes[randomNumber];
     console.log(chosenMeme);
   };
 
@@ -21,7 +18,7 @@ export default function Meme() {
           type="text"
         />
       </div>
-      <button onClick={handleClick} className="form--submit">
+      <button onClick={getMemeImage} className="form--submit">
         Get a new meme image 👀
       </button>
     </form>
