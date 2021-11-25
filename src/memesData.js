@@ -800,3 +800,5 @@ const memes = [
     box_count: 2,
   },
 ];
+
+export default memes;

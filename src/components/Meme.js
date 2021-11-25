@@ -1,7 +1,14 @@
+import memes from "../memesData";
+console.log(memes);
+
 export default function Meme() {
   const handleClick = (event) => {
     event.preventDefault();
-    console.log("I was clicked!");
+    const randomNumber = Math.floor(Math.random() * 100);
+    const chosenMeme = memes.filter((meme, index) => {
+      return index === randomNumber;
+    });
+    console.log(chosenMeme);
   };
 
   return (
