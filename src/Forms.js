@@ -8,7 +8,8 @@ export default function Form() {
     email: "",
     comments: "",
     isFriendly: true,
-    emplyment: "",
+    employment: "",
+    favColor: "",
   });
 
   //   We handle all inputs with the same eventhandler. Registering everysingle state change
@@ -27,7 +28,7 @@ export default function Form() {
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="First Name"
@@ -76,6 +77,7 @@ export default function Form() {
 
         <input
           type="radio"
+          //   We add an id to it so it can be associated with a label
           id="unemployed"
           //   All radio buttons have the same name. This way we tell react that they are part of the same element
           //   They are essentially 3 different responses for the same question
@@ -111,6 +113,27 @@ export default function Form() {
         <label htmlFor="full-time">Full-time</label>
         <br />
       </fieldset>
+
+      <label htmlFor="favColor">What is your favorite color?</label>
+      <br />
+      <select
+        id="favColor"
+        value={formData.favColor}
+        onChange={handleChange}
+        name="favColor"
+      >
+        {/* The first option initializes the select menu with the option "--Choose--" */}
+        <option value="">-- Choose --</option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="indigo">Indigo</option>
+        <option value="violet">Violet</option>
+      </select>
+      {/* The form will be submitted with a button. By default is "type=submit" */}
+      <button>Submit</button>
     </form>
   );
 }
