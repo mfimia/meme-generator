@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.31740b51.chunk.css",
+    "main.js": "/static/js/main.e3c2394d.chunk.js",
+    "main.js.map": "/static/js/main.e3c2394d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f94cfbb1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f94cfbb1.js.map",
+    "static/js/2.047362f1.chunk.js": "/static/js/2.047362f1.chunk.js",
+    "static/js/2.047362f1.chunk.js.map": "/static/js/2.047362f1.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.31740b51.chunk.css.map": "/static/css/main.31740b51.chunk.css.map",
+    "static/js/2.047362f1.chunk.js.LICENSE.txt": "/static/js/2.047362f1.chunk.js.LICENSE.txt",
+    "static/media/yaoming-meme-small.cdfffbc3.png": "/static/media/yaoming-meme-small.cdfffbc3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f94cfbb1.js",
+    "static/js/2.047362f1.chunk.js",
+    "static/css/main.31740b51.chunk.css",
+    "static/js/main.e3c2394d.chunk.js"
+  ]
+}
