@@ -70,15 +70,20 @@ export default function Form() {
       <label htmlFor="isFriendly">Are you friendly?</label>
       <br />
 
+      {/* Declaring a field with radio buttons and a legend */}
       <fieldset>
         <legend>Current employment status</legend>
 
         <input
           type="radio"
           id="unemployed"
+          //   All radio buttons have the same name. This way we tell react that they are part of the same element
+          //   They are essentially 3 different responses for the same question
           name="employment"
           value="unemployed"
+          //   Converting the "checked" attribute into boolean statement of employment being equal to its value to control the status of it being checked or not
           checked={formData.employment === "unemployed"}
+          //   Change is handled by the same event handler
           onChange={handleChange}
         />
         <label htmlFor="unemployed">Unemployed</label>
