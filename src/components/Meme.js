@@ -23,6 +23,10 @@ export default function Meme() {
     });
   };
 
+  fetch("https://swapi.dev/api/people/1").then((res) =>
+    res.json().then((data) => console.log(data))
+  );
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setMeme((prev) => {
