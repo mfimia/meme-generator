@@ -6,9 +6,11 @@ export default function Meme() {
   const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
+    // Setting default value on favourite meme
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
 
+  // Randzomizes the url of the image on button click (AKA form submit)
   const getMemeImage = (event) => {
     event.preventDefault();
     let randomNumber = Math.floor(Math.random() * 100);
@@ -20,6 +22,7 @@ export default function Meme() {
     });
   };
 
+  // Making an api call to fetch all meme data
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes").then((res) =>
       res.json().then((data) => {
@@ -28,6 +31,7 @@ export default function Meme() {
     );
   }, []);
 
+  // Listening to inputs to display screen text
   const handleChange = (event) => {
     const { name, value } = event.target;
     setMeme((prev) => {
