@@ -64,7 +64,7 @@ export default function Meme() {
           />
         </div>
         <button onClick={getMemeImage} className="form--submit">
-          Get a new meme image 👀
+          Try another one 👀
         </button>
       </form>
       <div className="meme--img">
