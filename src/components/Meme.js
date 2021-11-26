@@ -5,7 +5,7 @@ export default function Meme() {
   let randomNumber = Math.floor(Math.random() * memes.length);
 
   // State variables
-  //   const [meme, setMeme] = useState(memes[randomNumber]);
+
   const [allMemesData, setAllMemesData] = useState(memes);
   const [meme, setMeme] = useState({
     topText: "",
