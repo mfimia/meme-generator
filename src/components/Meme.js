@@ -1,20 +1,17 @@
-import memes from "../memesData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Meme() {
-  let randomNumber = Math.floor(Math.random() * memes.length);
-
   // State variables
-
-  const [allMemesData, setAllMemesData] = useState(memes);
+  const [allMemesData, setAllMemesData] = useState([]);
   const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
-    randomImage: allMemesData[randomNumber].url,
+    randomImage: "http://i.imgflip.com/1bij.jpg",
   });
 
   const getMemeImage = (event) => {
     event.preventDefault();
+    let randomNumber = Math.floor(Math.random() * 100);
     setMeme((prev) => {
       return {
         ...prev,
@@ -23,9 +20,13 @@ export default function Meme() {
     });
   };
 
-  fetch("https://swapi.dev/api/people/1").then((res) =>
-    res.json().then((data) => console.log(data))
-  );
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes").then((res) =>
+      res.json().then((data) => {
+        setAllMemesData(data.data.memes);
+      })
+    );
+  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
