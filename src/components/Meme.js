@@ -23,15 +23,35 @@ export default function Meme() {
     });
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setMeme((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
+
   return (
     <main>
       <form className="meme--form">
         <div className="form--input--text--container">
-          <input className="form--text--1" placeholder="Top text" type="text" />
           <input
+            value={meme.topText}
+            className="form--text--1"
+            placeholder="Top text"
+            type="text"
+            name="topText"
+            onChange={handleChange}
+          />
+          <input
+            value={meme.bottomText}
             className="form--text--2"
             placeholder="Bottom text"
             type="text"
+            name="bottomText"
+            onChange={handleChange}
           />
         </div>
         <button onClick={getMemeImage} className="form--submit">
@@ -40,8 +60,8 @@ export default function Meme() {
       </form>
       <div className="meme--img">
         <img src={meme.randomImage} alt="Random meme" />
-        <h2 className="meme--text top">One does not simply</h2>
-        <h2 className="meme--text bottom">Walk into Mordor</h2>
+        <h2 className="meme--text top">{meme.topText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>
       </div>
     </main>
   );
