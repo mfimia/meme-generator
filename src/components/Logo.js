@@ -12,8 +12,8 @@ export default function Logo() {
     >
       <path
         id="logo"
-        fill="white"
-        stroke="white"
+        fill="lightyellow"
+        stroke="lightyellow"
         strokeWidth="4"
         d={logoPath}
       />
