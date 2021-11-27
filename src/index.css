@@ -26,6 +26,7 @@
   background-color: rgb(139, 235, 235);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  justify-content: center;
 }
 
 .meme--header > * {
@@ -41,8 +42,10 @@
   letter-spacing: -0.1em;
 }
 
-.header--logo {
-  width: 40px;
+#svg-logo {
+  width: 70px;
+  position: absolute;
+  left: 5%;
 }
 
 main {
