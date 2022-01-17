@@ -1,26 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
+import MemeContext from "../context/MemeContext";
 
 export default function Meme() {
-  // State variables
-  const [allMemesData, setAllMemesData] = useState([]);
-  const [meme, setMeme] = useState({
-    topText: "",
-    bottomText: "",
-    // Setting default value on favourite meme
-    randomImage: "http://i.imgflip.com/1bij.jpg",
-  });
-
-  // Randzomizes the url of the image on button click (AKA form submit)
-  const getMemeImage = (event) => {
-    event.preventDefault();
-    let randomNumber = Math.floor(Math.random() * 100);
-    setMeme((prev) => {
-      return {
-        ...prev,
-        randomImage: allMemesData[randomNumber].url,
-      };
-    });
-  };
+  const memeContext = useContext(MemeContext);
+  const { meme, getMemeImage, setAllMemesData, setMeme } = memeContext;
 
   // Making an api call to fetch all meme data
   useEffect(() => {
@@ -29,6 +12,7 @@ export default function Meme() {
         setAllMemesData(data.data.memes);
       })
     );
+    // eslint-disable-next-line
   }, []);
 
   // Listening to inputs to display screen text
