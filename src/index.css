@@ -145,3 +145,9 @@ main {
 .top {
   top: 0;
 }
+
+.file-uploader {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
