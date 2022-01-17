@@ -1,9 +1,15 @@
 import { useEffect, useContext } from "react";
+import {
+  exportComponentAsJPEG,
+  exportComponentAsPDF,
+  exportComponentAsPNG,
+} from "react-component-export-image";
 import MemeContext from "../context/MemeContext";
+import MemeImage from "./MemeImage";
 
-export default function Meme() {
+const Meme = () => {
   const memeContext = useContext(MemeContext);
-  const { meme, getMemeImage, setAllMemesData, setMeme } = memeContext;
+  const { meme, getMemeImage, setAllMemesData, setMeme, memeRef } = memeContext;
 
   // Making an api call to fetch all meme data
   useEffect(() => {
@@ -50,12 +56,34 @@ export default function Meme() {
         <button onClick={getMemeImage} className="form--submit">
           Try another one 👀
         </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            exportComponentAsPNG(memeRef);
+          }}
+        >
+          Export As PNG
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            exportComponentAsPDF(memeRef);
+          }}
+        >
+          Export As PDF
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            exportComponentAsJPEG(memeRef);
+          }}
+        >
+          Export As JPEG
+        </button>
       </form>
-      <div className="meme--img">
-        <img src={meme.randomImage} alt="Random meme" />
-        <h2 className="meme--text top">{meme.topText}</h2>
-        <h2 className="meme--text bottom">{meme.bottomText}</h2>
-      </div>
+      <MemeImage ref={memeRef} />
     </main>
   );
-}
+};
+
+export default Meme;

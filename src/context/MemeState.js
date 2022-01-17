@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import MemeContext from "./MemeContext";
 
 const MemeState = (props) => {
@@ -9,6 +9,8 @@ const MemeState = (props) => {
     // Setting default value on favourite meme
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
+
+  const memeRef = useRef();
 
   // Get single meme
   const getMemeImage = (event) => {
@@ -27,6 +29,7 @@ const MemeState = (props) => {
       value={{
         meme,
         allMemesData,
+        memeRef,
         setMeme,
         getMemeImage,
         setAllMemesData,
