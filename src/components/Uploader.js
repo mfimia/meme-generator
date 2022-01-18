@@ -3,6 +3,7 @@ import MemeContext from "../context/MemeContext";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import IconButton from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
+import Tooltip from "@mui/material/Tooltip";
 
 const Uploader = () => {
   const memeContext = useContext(MemeContext);
@@ -32,9 +33,15 @@ const Uploader = () => {
         id="icon-button-file"
         type="file"
       />
-      <IconButton color="primary" aria-label="upload picture" component="span">
-        <UploadFileIcon />
-      </IconButton>
+      <Tooltip title="Upload picture">
+        <IconButton
+          color="primary"
+          aria-label="upload picture"
+          component="span"
+        >
+          <UploadFileIcon fontSize="large" />
+        </IconButton>
+      </Tooltip>
     </label>
   );
 };
