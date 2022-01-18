@@ -1,0 +1,17 @@
+export const memeText = {
+  position: "absolute",
+  width: "80%",
+  textAlign: "center",
+  left: "50%",
+  transform: "translateX(-50%)",
+  margin: "15px 0",
+  padding: "0 5px",
+  fontFamily: "impact, sans-serif",
+  fontSize: "2em",
+  textTransform: "uppercase",
+  color: "white",
+  letterSpacing: "1px",
+  textShadow: `2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000`,
+};

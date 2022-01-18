@@ -1,5 +1,8 @@
 import { useContext, forwardRef } from "react";
 import MemeContext from "../context/MemeContext";
+import CardMedia from "@mui/material/CardMedia";
+import { Box, Typography } from "@mui/material";
+import { memeText } from "../utils/memeText";
 
 const MemeImage = forwardRef(() => {
   const memeContext = useContext(MemeContext);
@@ -8,11 +11,13 @@ const MemeImage = forwardRef(() => {
   const { randomImage, topText, bottomText } = meme;
 
   return (
-    <div ref={memeRef} className="meme--img">
-      <img src={randomImage} alt="Random meme" />
-      <h2 className="meme--text top">{topText}</h2>
-      <h2 className="meme--text bottom">{bottomText}</h2>
-    </div>
+    <Box position={"relative"} ref={memeRef} component="div">
+      <Typography sx={memeText}>{topText}</Typography>
+      <Typography bottom={0} sx={memeText}>
+        {bottomText}
+      </Typography>
+      <CardMedia component="img" width="294" image={randomImage} alt="Meme" />
+    </Box>
   );
 });
 

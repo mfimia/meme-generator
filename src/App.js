@@ -1,17 +1,10 @@
-import Header from "./components/Header";
-import Meme from "./components/Meme";
-import Uploader from "./components/Uploader";
-import "./index.css";
 import MemeState from "./context/MemeState";
+import MemeCard from "./components/MemeCard";
 
 export default function App() {
   return (
     <MemeState>
-      <div className="App">
-        <Header />
-        <Meme />
-      </div>
-      <Uploader />
+      <MemeCard />
     </MemeState>
   );
 }
