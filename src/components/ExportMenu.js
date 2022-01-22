@@ -5,7 +5,6 @@ import MenuItem from "@mui/material/MenuItem";
 import MemeContext from "../context/MemeContext";
 import {
   exportComponentAsJPEG,
-  exportComponentAsPDF,
   exportComponentAsPNG,
 } from "react-component-export-image";
 
@@ -30,14 +29,6 @@ const ExportMenu = ({ open, handleClose, anchorEl }) => {
         }}
       >
         PNG
-      </MenuItem>
-      <MenuItem
-        onClick={() => {
-          handleClose();
-          exportComponentAsPDF(memeRef);
-        }}
-      >
-        PDF
       </MenuItem>
       <MenuItem
         onClick={() => {
