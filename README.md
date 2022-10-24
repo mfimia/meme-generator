@@ -1,6 +1,6 @@
 # Meme Generator
 
-[Link to deployed version](https://mfimia-memegenerator.netlify.app/ "Meme Generator (mfimia)")
+[Link to live version](https://mfimia-memegenerator.netlify.app/ "Meme Generator (mfimia)")
 
 ### Functionality:
 
